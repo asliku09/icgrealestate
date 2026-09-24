@@ -1,0 +1,118 @@
+ICG REAL ESTATE - WEB SİTESİ KULLANIM KILAVUZU
+================================================
+
+SİTEYİ AÇMAK
+------------
+SITEYI-AC.bat dosyasına çift tıklayın (veya index.html dosyasını
+tarayıcıda açın).
+
+YENİ DANIŞMAN EKLEMEK (kadro otomatik güncellenir)
+--------------------------------------------------
+1. "danışmanlar" klasörünün içine kişinin fotoğrafını kopyalayın
+   (örnek: ali veli.jpg).
+2. Aynı klasöre, fotoğrafla AYNI isimde bir metin dosyası oluşturun
+   (örnek: ali veli.txt) ve içine şunları yazın:
+
+   Ali Veli
+
+   Gayrimenkul Danışmanı
+   0212 244 1314
+   +90(5__) ___ __ __
+
+   (1. satır: ad soyad, sonra boş satır, unvan, ofis telefonu,
+   cep telefonu)
+3. KADROYU-GUNCELLE.bat dosyasına çift tıklayın. Hepsi bu!
+   Siteyi yenilediğinizde yeni kişi kadroda görünür.
+
+   İpucu: CANLI-TAKIP-BASLAT.bat dosyasını çalışır durumda
+   bırakırsanız, klasöre eklediğiniz her kişi ve ilan siteye
+   30 saniye içinde kendiliğinden yansır.
+
+DANIŞMAN ÇIKARMAK
+-----------------
+Kişinin .txt ve fotoğraf dosyalarını klasörden silip
+KADROYU-GUNCELLE.bat dosyasını çalıştırın.
+
+YENİ İLAN EKLEMEK (anasayfa + ilanlar sayfası otomatik güncellenir)
+-------------------------------------------------------------------
+1. "ilanlar" klasörüne, ilan adıyla bir metin dosyası oluşturun
+   (örnek: ilan5.txt). İçine sırasıyla yazın:
+
+   120.000.000 TL
+   İstanbul / Beyoğlu / Tomtom Mh.
+   Kategori İş Yeri
+   Durumu Satılık
+   Türü Dükkan & Mağaza
+   m² 350
+   ... (diğer özellikler alt alta)
+
+   (1. satır: fiyat, konum: içinde "/" geçen satır — örn.
+   "İstanbul / Beyoğlu / Tomtom Mh." — sonrası: özellik
+   satırları. Tarih ve ilan kodu yazsanız bile sitede
+   gösterilmez.)
+2. Aynı isimle kapak fotoğrafını ekleyin (örnek: ilan5 kapak.png).
+   Diğer fotoğraflar: ilan5 (1).png, ilan5 (2).png ...
+   (Hepsi aynı isimle başlamalı.)
+3. ILANLARI-GUNCELLE.bat dosyasına çift tıklayın. Hepsi bu!
+   İlan; kategorisine göre (ticari / konut / arsa)
+   anasayfadaki kayan listede ve İlanlar sayfasında görünür.
+   Kategori, bilgi dosyasındaki Kategori / Türü / Emlak Tipi
+   satırlarından otomatik anlaşılır (işyeri, dükkan, bina,
+   otel → ticari; daire, villa → konut; tarla → arsa).
+   ÖNEMLİ: Bilgi dosyası boş ya da fiyatı ve özellikleri
+   okunamayan ilanlar sitede HİÇ görünmez (dosya adı olarak
+   bile çıkmaz). Bilgileri doldurup güncelleyince otomatik
+   belirir. Örnek: ilan4.txt şu an boş olduğu için gizlidir.
+
+İLAN ÇIKARMAK
+-------------
+İlanın .txt ve fotoğraf dosyalarını klasörden silip
+ILANLARI-GUNCELLE.bat dosyasını çalıştırın.
+
+SAYFA SIRALAMASI (anasayfa)
+---------------------------
+Açılış görseli (Taksim) → iletişim tercihleri (Mülk Sahipleri,
+Alıcılar, Yatırımcılar) → Faaliyetlerimiz (kategoriler ve kayan
+ilanlar) → Hakkımızda → Ekip → İletişim.
+Üst menüdeki "İlanlar" tüm ilanların olduğu sayfaya gider;
+ilana tıklayınca detay yeni sekmede açılır.
+
+DİĞER DOSYALAR
+--------------
+- index.html      : Sitenin ana sayfası
+- ilanlar.html    : Tüm ilanların olduğu sayfa
+- ilan-detay.html : İlan detay sayfası (?id= ile açılır)
+- styles.css      : Tasarım (renkler, düzen)
+- app.js          : Kadro yükleme ve form işlemleri
+- listings.js     : İlan listeleme motoru
+- team.json       : Kadro verisi (otomatik üretilir, elle değiştirmeyin)
+- team-fallback.js: Kadro yedeği (otomatik üretilir, elle değiştirmeyin)
+- ilanlar.json    : İlan verisi (otomatik üretilir, elle değiştirmeyin)
+- ilanlar-fallback.js: İlan yedeği (otomatik üretilir, elle değiştirmeyin)
+- Kadro-Guncelle.ps1 / Ilan-Guncelle.ps1 : Güncelleme betikleri
+- logo/           : Firma logosu (değiştirirseniz siteye yansır)
+- hakkımızda.txt / firma bilgileri.txt : Kaynak metinler
+
+İLETİŞİM BİLGİLERİ DEĞİŞİRSE
+----------------------------
+Adres, telefon veya çalışma saatleri değişirse index.html
+dosyasındaki "İletişim" bölümünü güncelleyin.
+
+BAŞKASIYLA PAYLAŞMAK (dosyalar + link)
+--------------------------------------
+1. Önce KADROYU-GUNCELLE.bat ve ILANLARI-GUNCELLE.bat dosyalarını
+   çalıştırın (her şey güncel olsun).
+2. TEK-DOSYA-OLUSTUR.bat dosyasını çalıştırın. Şu 3 bağımsız
+   dosya oluşur (fotoğraflar ve bilgiler içlerine gömülüdür,
+   başka dosyaya ihtiyaç duymazlar):
+   - ICG-Real-Estate-Tanitim.html (anasayfa)
+   - ICG-Ilanlar.html (tüm ilanlar)
+   - ICG-Ilan-Detay.html (ilan detayı)
+3. Dosya olarak göndermek için: Bu 3 dosyayı birlikte WhatsApp
+   veya e-posta ile gönderin.
+4. Link olarak göndermek için (ücretsiz, 1 dakika):
+   a. https://app.netlify.com/drop adresine gidin.
+   b. 3 dosyayı birlikte sayfaya sürükleyip bırakın.
+   c. Size verilen ....netlify.app uzantılı linki paylaşın.
+   Not: Kadro veya ilan değişirse 1-2. adımları tekrarlayıp
+   dosyaları Netlify'daki sitenizin üzerine sürükleyerek güncelleyin.

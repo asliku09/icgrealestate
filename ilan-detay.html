@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İlan Detayı | ICG Real Estate – Beyoğlu, İstanbul</title>
+  <meta name="description" content="ICG Real Estate ilan detayı: fotoğraflar, özellikler ve iletişim.">
+  <link rel="icon" type="image/jpeg" href="logo/logo icg.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header header-solid" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-frame"><img src="logo/logo icg.jpg" alt="ICG Real Estate logosu" class="brand-logo"></span>
+        <span class="brand-text">ICG <em>Real Estate</em></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html#hakkimizda">Hakkımızda</a>
+        <a href="index.html#faaliyetler">Faaliyetlerimiz</a>
+        <a href="ilanlar.html" class="active">İlanlar</a>
+        <a href="#">Bloglar</a>
+        <a href="index.html#kadro">Kadromuz</a>
+        <a href="index.html#iletisim">İletişim</a>
+        <span class="nav-phone"><a href="tel:+902122441314">0212 244 13 14</a></span>
+      </nav>
+      <div class="header-actions">
+        <a href="tel:+902122441314" class="header-phone">0212 244 13 14</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section section-tight" style="padding-top:130px">
+    <div class="container" id="listingDetail">
+      <div class="team-skeleton">İlan yükleniyor…</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <span class="brand-frame"><img src="logo/logo icg.jpg" alt="ICG Real Estate" class="footer-logo"></span>
+        <div class="icg-expand" aria-label="ICG açılımı: Investment Connection Global" lang="en">
+          <div class="icg-line"><span class="icg-letter">I</span><span class="icg-word">INVESTMENT</span></div>
+          <div class="icg-line"><span class="icg-letter">C</span><span class="icg-word">CONNECTION</span></div>
+          <div class="icg-line"><span class="icg-letter">G</span><span class="icg-word">GLOBAL</span></div>
+        </div>
+      </div>
+      <div>
+        <h4>İletişim</h4>
+        <p>Tomtom, İstiklal Cd. Beyoğlu İş Merkezi Kat 5,<br>34443 Beyoğlu / İstanbul</p>
+        <p><a href="tel:+902122441314">0212 244 13 14</a><br><a href="tel:+905323881072">0532 388 10 72</a></p>
+      </div>
+      <div>
+        <h4>Menü</h4>
+        <a href="index.html#hakkimizda">Hakkımızda</a>
+        <a href="index.html#faaliyetler">Faaliyetlerimiz</a>
+        <a href="ilanlar.html">İlanlar</a>
+        <a href="#">Bloglar</a>
+        <a href="index.html#iletisim">İletişim</a>
+      </div>
+      <div>
+        <h4>Çalışma Saatleri</h4>
+        <p>Hafta içi: 09:30 – 20:00<br>Cumartesi: 10:00 – 20:00<br>Pazar: 12:00 – 18:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> ICG Real Estate — Tüm hakları saklıdır.</span></div>
+  </footer>
+
+  <script src="team-fallback.js"></script>
+  <script src="app.js"></script>
+  <script src="ilanlar-fallback.js"></script>
+  <script src="listings.js"></script>
+  <script>ListingsApp.init({});</script>
+</body>
+</html>
