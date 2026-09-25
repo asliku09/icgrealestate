@@ -26,19 +26,20 @@
 
   function renderTeam(list, updatedAt) {
     var grid = document.getElementById('teamGrid');
-    var count = document.getElementById('teamCount');
     var updated = document.getElementById('teamUpdated');
     if (!grid) return;
     if (!list || !list.length) {
       grid.innerHTML = '<div class="team-skeleton">Henüz danışman bilgisi bulunamadı. <strong>danışmanlar</strong> klasörüne ad + .txt ve fotoğraf ekleyip <strong>KADROYU-GUNCELLE</strong> dosyasını çalıştırın.</div>';
       return;
     }
-    // Broker önce gelsin
-    var sorted = list.slice().sort(function (a, b) {
-      var ar = /broker/i.test(a.role || '') ? 0 : 1;
-      var br = /broker/i.test(b.role || '') ? 0 : 1;
-      return ar - br;
-    });
+    // Sabit kadro sıralaması: mustafa, uğur, feray, gizem, salih, gülşah
+    var ORDER = ['mustafa çelik', 'uğur mumcu', 'feray bakthavar', 'gizem karataş', 'salih özdemir', 'gülşah erdal'];
+    function ordIx(name) {
+      var n = (name || '').toLocaleLowerCase('tr-TR');
+      var ix = ORDER.indexOf(n);
+      return ix === -1 ? 99 : ix;
+    }
+    var sorted = list.slice().sort(function (a, b) { return ordIx(a.name) - ordIx(b.name); });
     grid.innerHTML = sorted.map(function (p) {
       var isBroker = /broker/i.test(p.role || '');
       var phones = '';
@@ -54,7 +55,6 @@
         '<div class="team-phones">' + phones + '</div>' +
         '</div>';
     }).join('');
-    if (count) count.textContent = '• Toplam ' + list.length + ' kişi';
     if (updated) updated.textContent = updatedAt ? 'Son güncelleme: ' + updatedAt : '';
   }
 
