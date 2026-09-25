@@ -150,6 +150,7 @@ section.section{border-top:1px solid var(--line)}
 .footer a{display:block;text-decoration:none;color:#b9b2a4;font-size:.9rem;margin-bottom:6px}
 .footer a:hover{color:#fff}
 .footer p{font-size:.9rem}
+.footer-phones a{display:inline;margin-bottom:0}
 .footer .brand-frame{margin-bottom:14px}
 .footer-tag{font-family:var(--font-serif);font-size:1.2rem;color:#e9e2d2;font-style:italic}
 /* Footer ICG açılımı: I/C/G alt alta, logodaki gümüş harf görünümü */
