@@ -131,17 +131,32 @@
     })(prefBtns[pi]);
   }
 
-  // İletişim formu -> WhatsApp
+  // İletişim formu -> WhatsApp + E-posta (adres: mail icg.txt)
+  var CONTACT_EMAIL = 'icgrealestate@gmail.com';
   var form = document.getElementById('contactForm');
+  function formData() {
+    return {
+      name: document.getElementById('fName').value.trim(),
+      phone: document.getElementById('fPhone').value.trim(),
+      topic: document.getElementById('fTopic').value,
+      msg: document.getElementById('fMsg').value.trim()
+    };
+  }
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var name = document.getElementById('fName').value.trim();
-      var phone = document.getElementById('fPhone').value.trim();
-      var topic = document.getElementById('fTopic').value;
-      var msg = document.getElementById('fMsg').value.trim();
-      var text = 'Merhaba, ben ' + name + ' (' + phone + '). Konu: ' + topic + (msg ? '. Mesaj: ' + msg : '');
+      var d = formData();
+      var text = 'Merhaba, ben ' + d.name + ' (' + d.phone + '). Konu: ' + d.topic + (d.msg ? '. Mesaj: ' + d.msg : '');
       window.open('https://wa.me/905323881072?text=' + encodeURIComponent(text), '_blank');
     });
+    var mailBtn = document.getElementById('mailBtn');
+    if (mailBtn) {
+      mailBtn.addEventListener('click', function () {
+        var d = formData();
+        var subject = 'Site formu: ' + d.topic;
+        var body = 'Ad Soyad: ' + d.name + '\nTelefon: ' + d.phone + '\nKonu: ' + d.topic + (d.msg ? '\nMesaj: ' + d.msg : '');
+        window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      });
+    }
   }
 })();
