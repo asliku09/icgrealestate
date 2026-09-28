@@ -23,7 +23,7 @@ html{scroll-behavior:smooth}
 body{font-family:var(--font-sans);font-weight:300;color:var(--text);background:var(--paper);line-height:1.75;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit}
-.container{max-width:1140px;margin:0 auto;padding:0 24px}
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
 .container.narrow{max-width:780px}
 h1,h2,h3{font-family:var(--font-serif);font-weight:500;color:var(--ink);line-height:1.2}
 h2{font-size:clamp(1.9rem,3.4vw,2.5rem);margin:10px 0 18px}
@@ -54,6 +54,20 @@ section.section{border-top:1px solid var(--line)}
 .brand-titles{display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-width:0}
 .brand-badge{display:inline-block;margin-left:0;padding:5px 12px;border:1px solid var(--gold);font-family:var(--font-sans);font-weight:500;font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);white-space:nowrap;vertical-align:middle}
 .nav{display:flex;align-items:center;gap:26px}
+/* Masaüstü: kare logo çerçevesi + marka-menü aralığı (mobil kurallar etkilenmez) */
+@media(min-width:961px){
+  .header .brand-frame{width:114px;height:114px;display:inline-flex;align-items:center;justify-content:center;padding:0;flex:0 0 auto}
+  .brand{margin-right:24px}
+}
+/* Dar masaüstü/tablet-yatay: tek satırı koru, taşmayı önle */
+@media(min-width:961px) and (max-width:1240px){
+  .header-inner{gap:18px;padding:16px}
+  .brand{margin-right:8px}
+  .nav{gap:18px}
+  .nav a{font-size:.74rem;letter-spacing:2px}
+  .header-phone{display:none}
+  .nav-phone{display:block}
+}
 .nav a{text-decoration:none;font-size:.8rem;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.88)}
 .nav a:hover{color:var(--gold)}
 .nav-phone{display:none}
