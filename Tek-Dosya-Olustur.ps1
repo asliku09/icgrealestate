@@ -72,8 +72,8 @@ $appNoFetch = $app.Replace("s.src = 'team-fallback.js?t=' + Date.now();", 'retur
 function Build-Page($srcName, $outName, $withTeam) {
   $html = Read-Utf8 $srcName
   if ($logoUri -ne '') { $html = $html.Replace('logo/logo icg.jpg?v=2', $logoUri).Replace('logo/logo icg.jpg', $logoUri) }
-  $html = $html.Replace('logo/icg-i.png', (Get-EmbedUri 'logo/icg-i.png' 200 85)).Replace('logo/icg-c.png', (Get-EmbedUri 'logo/icg-c.png' 400 85)).Replace('logo/icg-g.png', (Get-EmbedUri 'logo/icg-g.png' 400 85))
-  $html = $html.Replace('<link rel="stylesheet" href="styles.css?v=2">', '<style>' + $css + '</style>').Replace('<link rel="stylesheet" href="styles.css">', '<style>' + $css + '</style>')
+  $html = $html.Replace('logo/icg-i.png?v=2', (Get-EmbedUri 'logo/icg-i.png' 200 85)).Replace('logo/icg-c.png?v=2', (Get-EmbedUri 'logo/icg-c.png' 400 85)).Replace('logo/icg-g.png?v=2', (Get-EmbedUri 'logo/icg-g.png' 400 85)).Replace('logo/icg-i.png', (Get-EmbedUri 'logo/icg-i.png' 200 85)).Replace('logo/icg-c.png', (Get-EmbedUri 'logo/icg-c.png' 400 85)).Replace('logo/icg-g.png', (Get-EmbedUri 'logo/icg-g.png' 400 85))
+  $html = $html.Replace('<link rel="stylesheet" href="styles.css?v=3">', '<style>' + $css + '</style>').Replace('<link rel="stylesheet" href="styles.css?v=2">', '<style>' + $css + '</style>').Replace('<link rel="stylesheet" href="styles.css">', '<style>' + $css + '</style>')
   if ($withTeam) {
     $inlineApp = 'window.__TEAM_FALLBACK__ = ' + $teamJson + ';' + "`r`n" + $appNoFetch
   } else {
