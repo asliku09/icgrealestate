@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Özel İlan | ICG Real Estate</title>
+  <meta name="description" content="ICG Real Estate özel ilan: fotoğraflar, özellikler ve iletişim.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/jpeg" href="logo/logo icg.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=2">
+  <style>
+    .gprice{font-family:var(--font-serif);font-size:clamp(1.6rem,3vw,2.1rem);color:var(--ink);text-align:center;margin:8px 0 4px}
+    .gallery{margin:22px 0}
+    .gallery .gmain img{width:100%;border-radius:4px}
+    .gallery .gthumbs{display:flex;gap:8px;margin-top:8px;overflow-x:auto}
+    .gallery .gthumbs img{width:88px;height:66px;object-fit:cover;border-radius:4px;cursor:pointer;opacity:.7;border:2px solid transparent}
+    .gallery .gthumbs img.on{opacity:1;border-color:var(--gold)}
+    .gfacts p{margin-bottom:6px}
+    @media(max-width:640px){.gprice{font-size:1.5rem}}
+  </style>
+</head>
+<body>
+
+  <header class="header header-solid" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-frame"><img src="logo/logo icg.jpg?v=2" alt="ICG Real Estate logosu" class="brand-logo"></span>
+        <span class="brand-titles">
+          <span class="brand-text">ICG <em>Real Estate</em></span>
+          <span class="brand-badge">Sektörde 15. Yıl</span>
+        </span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html#hakkimizda">Hakkımızda</a>
+        <a href="index.html#faaliyetler">Faaliyetlerimiz</a>
+        <a href="ilanlar.html">İlanlar</a>
+        <a href="index.html#kadro">Kadromuz</a>
+        <a href="index.html#iletisim">İletişim</a>
+        <span class="nav-phone"><a href="tel:+902122441314">0212 244 13 14</a></span>
+      </nav>
+      <div class="header-actions">
+        <a href="tel:+902122441314" class="header-phone">0212 244 13 14</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section section-tight" style="padding-top:130px">
+    <div id="gizliDetail">
+      <div class="container narrow"><p class="muted center">İlan yükleniyor…</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p class="muted center">ICG Real Estate — Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="gizli-ilan.js"></script>
+</body>
+</html>
