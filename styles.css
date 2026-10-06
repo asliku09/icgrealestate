@@ -171,8 +171,8 @@ section.section{border-top:1px solid var(--line)}
 /* Footer ICG açılımı: I/C/G alt alta, logodaki gümüş harf görünümü */
 .icg-expand{display:flex;flex-direction:column;gap:4px;margin-top:2px}
 .icg-line{display:flex;align-items:center;gap:10px;line-height:1.2}
-.icg-letter{width:34px;flex:0 0 34px;display:flex;align-items:center;justify-content:center}
-.icg-letter img{height:30px;width:auto;max-width:100%;display:block;mix-blend-mode:screen}
+.icg-letter{width:37px;flex:0 0 37px;display:flex;align-items:center;justify-content:center}
+.icg-letter img{height:30px;width:auto;max-width:none;display:block;mix-blend-mode:screen}
 .icg-word{font-family:var(--font-sans);font-weight:400;font-size:.85rem;letter-spacing:3px;color:#e9e2d2}
 .footer-bottom{border-top:1px solid rgba(211,158,80,.25);padding:18px 24px;font-size:.8rem;letter-spacing:1px;color:#8a8478;text-align:center}
 
